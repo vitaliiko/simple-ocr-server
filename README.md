@@ -115,6 +115,10 @@ fetch('http://localhost:5001/api/v1/read', {
 .then(data => console.log(data));
 ```
 
+## Docker repo
+
+https://hub.docker.com/repository/docker/vitaliikobrin/simple-ocr-server/general
+
 ## Supported Image Formats
 
 - JPEG/JPG
