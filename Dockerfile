@@ -17,11 +17,11 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY src/requirements.txt .
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY app.py .
+COPY src/app.py .
 
 # Create non-root user for security
 RUN useradd -m -u 1000 ocruser && chown -R ocruser:ocruser /app
