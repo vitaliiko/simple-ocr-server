@@ -1,6 +1,9 @@
 services:
-  ocr-api:
-    build: .
+  ocr-server:
+    build:
+      context: .
+      tags:
+        - vitaliikobrin/simple-ocr-server:1.0.0
     ports:
       - "5001:5001"
     environment:
