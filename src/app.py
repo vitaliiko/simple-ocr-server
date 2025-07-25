@@ -7,11 +7,9 @@ import logging
 
 app = Flask(__name__)
 
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Configure Tesseract path (for Docker container)
 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 @app.route('/health', methods=['GET'])

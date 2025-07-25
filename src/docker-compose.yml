@@ -6,13 +6,6 @@ services:
     environment:
       - PORT=5001
     restart: unless-stopped
-    # Limit resources
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-          cpus: '0.5'
-    # Add volume for temporary files if needed
     volumes:
       - /tmp:/tmp
     healthcheck:
