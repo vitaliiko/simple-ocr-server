@@ -17,7 +17,7 @@ def health_check():
     """Health check endpoint"""
     return jsonify({"status": "healthy", "message": "OCR API is running"})
 
-@app.route('/ocr', methods=['POST'])
+@app.route('/api/v1/read', methods=['POST'])
 def extract_text():
     """
     Extract text from uploaded image using Tesseract OCR
@@ -94,16 +94,6 @@ def extract_text():
             "success": False,
             "error": "Internal server error during text extraction"
         }), 500
-
-@app.route('/languages', methods=['GET'])
-def get_supported_languages():
-    """Get list of supported languages"""
-    languages = {
-        "eng": "English",
-        "ukr": "Ukrainian",
-        "eng+ukr": "English + Ukrainian"
-    }
-    return jsonify({"supported_languages": languages})
 
 @app.errorhandler(413)
 def too_large(e):
